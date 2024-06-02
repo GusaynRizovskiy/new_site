@@ -1,0 +1,22 @@
+{% extends 'shopapp/base.html' %}
+{% block titile %}
+    Orders List
+{% endblock %}
+{% block body %}
+    <h1>Orders:</h1>
+    <div>
+        {% if orders %}
+            <div>
+                {% for order in orders %}
+                    <p><b>Order number: {{ order.id }}</b></p>
+                    <p>Delivery address: {{ order.delivery_address }}</p>
+                    <p>Promocode: {{ order.promocode }}</p>
+                    <p>Created_at: {{ order.created_at }}</p>
+                    <p>Order by user: {% firstof order.user.first_name order.user.username %}</p>
+                {% endfor %}
+            </div>
+        {% else %}
+            <h1>Some problem: we can't find orders</h1>
+        {% endif %}
+    </div>
+{% endblock %}
