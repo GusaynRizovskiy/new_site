@@ -18,3 +18,5 @@ def OrderList(request:HttpRequest)->HttpResponse:
         "orders": Order.objects.all()
     }
     return render(request,"shopapp/orders-list.html",context=context)
+
+#проверка работы
