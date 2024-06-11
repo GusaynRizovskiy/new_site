@@ -20,3 +20,4 @@ def OrderList(request:HttpRequest)->HttpResponse:
     return render(request,"shopapp/orders-list.html",context=context)
 
 #проверка работы
+#проверка работы 2
